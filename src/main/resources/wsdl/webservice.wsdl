@@ -1,0 +1,1262 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.api.playpen.retriever.com.au/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="WebService" targetNamespace="http://ws.api.playpen.retriever.com.au/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.api.playpen.retriever.com.au/" xmlns:ns1="bar" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ws.api.playpen.retriever.com.au/">
+  <xs:import namespace="bar"/>
+  <xs:element name="addAssets" type="tns:addAssets"/>
+  <xs:element name="addAssetsResponse" type="tns:addAssetsResponse"/>
+  <xs:element name="asset" type="tns:asset"/>
+  <xs:element name="assignJob" type="tns:assignJob"/>
+  <xs:element name="assignJobResponse" type="tns:assignJobResponse"/>
+  <xs:element name="attachmentData" type="tns:attachmentData"/>
+  <xs:element name="closeJob" type="tns:closeJob"/>
+  <xs:element name="closeJobResponse" type="tns:closeJobResponse"/>
+  <xs:element name="createJob" type="tns:createJob"/>
+  <xs:element name="createJobResponse" type="tns:createJobResponse"/>
+  <xs:element name="createMessage" type="tns:createMessage"/>
+  <xs:element name="createMessageResponse" type="tns:createMessageResponse"/>
+  <xs:element name="customer" type="tns:customer"/>
+  <xs:element name="customerAssets" type="tns:customerAssets"/>
+  <xs:element name="deleteJob" type="tns:deleteJob"/>
+  <xs:element name="deleteJobResponse" type="tns:deleteJobResponse"/>
+  <xs:element name="deleteMessage" type="tns:deleteMessage"/>
+  <xs:element name="deleteMessageResponse" type="tns:deleteMessageResponse"/>
+  <xs:element name="eCompletedForm" type="tns:eCompletedForm"/>
+  <xs:element name="eFieldWorker" type="tns:eFieldworker"/>
+  <xs:element name="eGps" type="tns:eGps"/>
+  <xs:element name="eJob" type="tns:eJob"/>
+  <xs:element name="eNewJob" type="tns:eNewJob"/>
+  <xs:element name="eStatusUpdate" type="tns:eStatusUpdate"/>
+  <xs:element name="enpTime" type="tns:enpTime"/>
+  <xs:element name="export" type="tns:export"/>
+  <xs:element name="exportFieldworkers" type="tns:exportFieldworkers"/>
+  <xs:element name="exportFieldworkersResponse" type="tns:exportFieldworkersResponse"/>
+  <xs:element name="exportForms" type="tns:exportForms"/>
+  <xs:element name="exportFormsResponse" type="tns:exportFormsResponse"/>
+  <xs:element name="exportGPS" type="tns:exportGPS"/>
+  <xs:element name="exportGPSResponse" type="tns:exportGPSResponse"/>
+  <xs:element name="exportJobs" type="tns:exportJobs"/>
+  <xs:element name="exportJobsResponse" type="tns:exportJobsResponse"/>
+  <xs:element name="exportMessages" type="tns:exportMessages"/>
+  <xs:element name="exportMessagesResponse" type="tns:exportMessagesResponse"/>
+  <xs:element name="exportNPTimes" type="tns:exportNPTimes"/>
+  <xs:element name="exportNPTimesResponse" type="tns:exportNPTimesResponse"/>
+  <xs:element name="exportNewJobs" type="tns:exportNewJobs"/>
+  <xs:element name="exportNewJobsResponse" type="tns:exportNewJobsResponse"/>
+  <xs:element name="exportStatusUpdates" type="tns:exportStatusUpdates"/>
+  <xs:element name="exportStatusUpdatesResponse" type="tns:exportStatusUpdatesResponse"/>
+  <xs:element name="exportWithJobId" type="tns:exportWithJobId"/>
+  <xs:element name="exportWithTechId" type="tns:exportWithTechId"/>
+  <xs:element name="fieldWorker" type="tns:fieldWorker"/>
+  <xs:element name="generalDetails" type="tns:generalDetails"/>
+  <xs:element name="importCustomerAssets" type="tns:importCustomerAssets"/>
+  <xs:element name="importCustomerAssetsResponse" type="tns:importCustomerAssetsResponse"/>
+  <xs:element name="importCustomers" type="tns:importCustomers"/>
+  <xs:element name="importCustomersResponse" type="tns:importCustomersResponse"/>
+  <xs:element name="importFullPartsInventoryLoc" type="tns:importFullPartsInventoryLoc"/>
+  <xs:element name="importFullPartsInventoryLocResponse" type="tns:importFullPartsInventoryLocResponse"/>
+  <xs:element name="importJobAttachments" type="tns:importJobAttachments"/>
+  <xs:element name="importJobAttachmentsResponse" type="tns:importJobAttachmentsResponse"/>
+  <xs:element name="importPartialPartsInventoryLoc" type="tns:importPartialPartsInventoryLoc"/>
+  <xs:element name="importPartialPartsInventoryLocResponse" type="tns:importPartialPartsInventoryLocResponse"/>
+  <xs:element name="importParts" type="tns:importParts"/>
+  <xs:element name="importPartsResponse" type="tns:importPartsResponse"/>
+  <xs:element name="job" type="tns:job"/>
+  <xs:element name="jobAttachments" type="tns:jobAttachments"/>
+  <xs:element name="message" type="tns:message"/>
+  <xs:element name="modifyJobDetails" type="tns:modifyJobDetails"/>
+  <xs:element name="modifyJobDetailsResponse" type="tns:modifyJobDetailsResponse"/>
+  <xs:element name="part" type="tns:part"/>
+  <xs:element name="reassignJob" type="tns:reassignJob"/>
+  <xs:element name="reassignJobResponse" type="tns:reassignJobResponse"/>
+  <xs:element name="removeAsset" type="tns:removeAsset"/>
+  <xs:element name="removeAssetResponse" type="tns:removeAssetResponse"/>
+  <xs:element name="result" type="tns:result"/>
+  <xs:complexType name="exportFieldworkers">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="fieldworker" type="tns:fieldWorker"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fieldWorker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="techId" nillable="true" type="xs:string"/>
+      <xs:element name="timeout" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportFieldworkersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="result">
+    <xs:sequence>
+      <xs:element name="success" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="txId" type="xs:string"/>
+      <xs:element name="errorCode" type="xs:int"/>
+      <xs:element minOccurs="0" name="errorMsg" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="completedForm" type="tns:eCompletedForm"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="eFieldworker" type="tns:eFieldworker"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="eGPS" type="tns:eGps"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="eStatusUpdate" type="tns:eStatusUpdate"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="eJob" type="tns:eJob"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="eNPTime" type="tns:enpTime"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="eNewJob" type="tns:eNewJob"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eCompletedForm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="jobId" type="xs:string"/>
+      <xs:element minOccurs="0" name="phaseId" type="xs:string"/>
+      <xs:element minOccurs="0" name="techId" type="xs:string"/>
+      <xs:element minOccurs="0" name="formId" type="xs:string"/>
+      <xs:element minOccurs="0" name="formDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="assetSerial" type="xs:string"/>
+      <xs:element minOccurs="0" name="serviceId" type="xs:string"/>
+      <xs:element minOccurs="0" name="completedDT" type="xs:string"/>
+      <xs:element minOccurs="0" name="clientId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eFieldworker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="techId" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="phone" type="xs:string"/>
+      <xs:element minOccurs="0" name="state" type="xs:string"/>
+      <xs:element minOccurs="0" name="location" type="xs:string"/>
+      <xs:element minOccurs="0" name="isDisabled" type="xs:string"/>
+      <xs:element minOccurs="0" name="isDeleted" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateModified" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eGps">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="techId" type="xs:string"/>
+      <xs:element name="longitude" type="xs:double"/>
+      <xs:element name="latitude" type="xs:double"/>
+      <xs:element minOccurs="0" name="stampedDateTime" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eStatusUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="jobId" type="xs:string"/>
+      <xs:element minOccurs="0" name="phaseId" type="xs:string"/>
+      <xs:element minOccurs="0" name="techId" type="xs:string"/>
+      <xs:element minOccurs="0" name="statusId" type="xs:string"/>
+      <xs:element minOccurs="0" name="statusDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="statusTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="statusDateTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="statusDesc" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eJob">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="jobId" type="xs:string"/>
+      <xs:element minOccurs="0" name="phaseId" type="xs:string"/>
+      <xs:element minOccurs="0" name="techId" type="xs:string"/>
+      <xs:element minOccurs="0" name="workDone" type="xs:string"/>
+      <xs:element minOccurs="0" name="workRecommend" type="xs:string"/>
+      <xs:element minOccurs="0" name="comments" type="xs:string"/>
+      <xs:element minOccurs="0" name="officeNotes" type="xs:string"/>
+      <xs:element minOccurs="0" name="jobDateTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="signatureName" type="xs:string"/>
+      <xs:element minOccurs="0" name="jobStatus" type="xs:string"/>
+      <xs:element minOccurs="0" name="custName" type="xs:string"/>
+      <xs:element minOccurs="0" name="custId" type="xs:string"/>
+      <xs:element minOccurs="0" name="address1" type="xs:string"/>
+      <xs:element minOccurs="0" name="address2" type="xs:string"/>
+      <xs:element minOccurs="0" name="suburb" type="xs:string"/>
+      <xs:element minOccurs="0" name="postcode" type="xs:string"/>
+      <xs:element minOccurs="0" name="contact" type="xs:string"/>
+      <xs:element minOccurs="0" name="phone" type="xs:string"/>
+      <xs:element minOccurs="0" name="jobDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="createDatetime" type="xs:string"/>
+      <xs:element minOccurs="0" name="techName" type="xs:string"/>
+      <xs:element minOccurs="0" name="serialNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="jobType" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="accountMgrEmail" type="xs:string"/>
+      <xs:element minOccurs="0" name="serviceMgrEmail" type="xs:string"/>
+      <xs:element minOccurs="0" name="eSignature" type="tns:eSignature"/>
+      <xs:element minOccurs="0" name="eTime" type="tns:eTime"/>
+      <xs:element minOccurs="0" name="paymentOption" type="xs:string"/>
+      <xs:element minOccurs="0" name="siteNotes" type="xs:string"/>
+      <xs:element minOccurs="0" name="employer" type="xs:string"/>
+      <xs:element minOccurs="0" name="subemployer" type="xs:string"/>
+      <xs:element minOccurs="0" name="eResolutionCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="custState" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eSignature">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="signature" type="xs:string"/>
+      <xs:element minOccurs="0" name="signatureName" type="xs:string"/>
+      <xs:element minOccurs="0" name="signatureType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="jobId" type="xs:string"/>
+      <xs:element minOccurs="0" name="labType" type="xs:string"/>
+      <xs:element minOccurs="0" name="labQty" type="xs:string"/>
+      <xs:element minOccurs="0" name="labQtyOT" type="xs:string"/>
+      <xs:element minOccurs="0" name="labQtyDT" type="xs:string"/>
+      <xs:element minOccurs="0" name="travelQty" type="xs:string"/>
+      <xs:element minOccurs="0" name="statusTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="fieldWorker" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enpTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="jobId" type="xs:string"/>
+      <xs:element minOccurs="0" name="labType" type="xs:string"/>
+      <xs:element minOccurs="0" name="labQty" type="xs:string"/>
+      <xs:element minOccurs="0" name="labQtyOT" type="xs:string"/>
+      <xs:element minOccurs="0" name="labQtyDT" type="xs:string"/>
+      <xs:element minOccurs="0" name="travelQty" type="xs:string"/>
+      <xs:element minOccurs="0" name="statusTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="fieldWorker" type="xs:string"/>
+      <xs:element minOccurs="0" name="endDateTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="startDateTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="nonJobTimeTypeID" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eNewJob">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="jobId" type="xs:string"/>
+      <xs:element minOccurs="0" name="phaseId" type="xs:string"/>
+      <xs:element minOccurs="0" name="custName" type="xs:string"/>
+      <xs:element minOccurs="0" name="address1" type="xs:string"/>
+      <xs:element minOccurs="0" name="address2" type="xs:string"/>
+      <xs:element minOccurs="0" name="suburb" type="xs:string"/>
+      <xs:element minOccurs="0" name="postcode" type="xs:string"/>
+      <xs:element minOccurs="0" name="contact" type="xs:string"/>
+      <xs:element minOccurs="0" name="phone" type="xs:string"/>
+      <xs:element minOccurs="0" name="schedDateTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="jobDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="completionIntended" type="xs:string"/>
+      <xs:element minOccurs="0" name="techId" type="xs:string"/>
+      <xs:element minOccurs="0" name="createDateTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="serialNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="custId" type="xs:string"/>
+      <xs:element minOccurs="0" name="jobType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeAsset">
+    <xs:sequence>
+      <xs:element name="jobId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" name="serialNo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeAssetResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importCustomers">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="customers" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element name="custId" type="xs:string"/>
+      <xs:element name="custName" type="xs:string"/>
+      <xs:element name="add1" type="xs:string"/>
+      <xs:element minOccurs="0" name="add2" nillable="true" type="xs:string"/>
+      <xs:element name="suburb" type="xs:string"/>
+      <xs:element minOccurs="0" name="custState" nillable="true" type="xs:string"/>
+      <xs:element name="contact" type="xs:string"/>
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="postCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="accMgrEmail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="serviceMgrEmail" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importCustomersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportStatusUpdates">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="newJob" type="tns:export"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="export">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="timeout" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="updatedSince" nillable="true" type="xs:string"/>
+      <xs:element name="export" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="max" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="transactionId" nillable="true" type="xs:string"/>
+      <xs:element name="maxProcessingTime" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportStatusUpdatesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportJobs">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="job" type="tns:exportWithJobId"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportWithJobId">
+    <xs:complexContent>
+      <xs:extension base="tns:export">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="jobId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="exportJobsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportForms">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="form" type="tns:exportWithJobId"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportFormsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="closeJob">
+    <xs:sequence>
+      <xs:element name="jobId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="closeJobResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="assignJob">
+    <xs:sequence>
+      <xs:element name="jobId" type="xs:string"/>
+      <xs:element name="techId" type="xs:string"/>
+      <xs:element name="startDateTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="endDateTime" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="assignJobResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAssets">
+    <xs:sequence>
+      <xs:element name="jobId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" name="assets" type="tns:asset"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="asset">
+    <xs:sequence>
+      <xs:element name="serialNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+      <xs:element name="assetType" type="xs:string"/>
+      <xs:element minOccurs="0" name="serviceLevel" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="modelNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="location" type="xs:string"/>
+      <xs:element minOccurs="0" name="buildingName" type="xs:string"/>
+      <xs:element minOccurs="0" name="installDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="make" type="xs:string"/>
+      <xs:element minOccurs="0" name="orderId" type="xs:int"/>
+      <xs:element minOccurs="0" name="notes" type="xs:string"/>
+      <xs:element name="isMandatory" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="form" type="tns:form"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="formItemProperties" nillable="true" type="tns:formItemProperties"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="form">
+    <xs:sequence>
+      <xs:element name="formDesc" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" name="page" type="tns:page"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="page">
+    <xs:sequence>
+      <xs:element name="pageName" type="xs:string"/>
+      <xs:element name="isMandatory" type="xs:boolean"/>
+      <xs:element name="sortCode" type="xs:int"/>
+      <xs:element maxOccurs="unbounded" name="item" type="tns:item"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="item">
+    <xs:sequence>
+      <xs:element name="itemName" type="xs:string"/>
+      <xs:element name="inputType" type="xs:string"/>
+      <xs:element name="itemText" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="listItem" type="xs:string"/>
+      <xs:element minOccurs="0" name="defaultValue" type="xs:string"/>
+      <xs:element name="isMandatory" type="xs:boolean"/>
+      <xs:element name="sortCode" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="formItemProperties">
+    <xs:sequence>
+      <xs:element name="formDesc" type="xs:string"/>
+      <xs:element name="pageName" type="xs:string"/>
+      <xs:element name="itemName" type="xs:string"/>
+      <xs:element name="defaultValue" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAssetsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteJob">
+    <xs:sequence>
+      <xs:element name="jobId" type="xs:string"/>
+      <xs:element minOccurs="0" name="phaseId" type="xs:string"/>
+      <xs:element minOccurs="0" name="techId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteJobResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportNewJobs">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="newJob" type="tns:exportWithJobId"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportNewJobsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importParts">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="parts" type="tns:part"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="part">
+    <xs:sequence>
+      <xs:element name="partId" type="xs:string"/>
+      <xs:element minOccurs="0" name="partDesc" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="unitPrice" nillable="true" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importPartsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createJob">
+    <xs:sequence>
+      <xs:element name="job" type="tns:job"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="job">
+    <xs:complexContent>
+      <xs:extension base="tns:generalDetails">
+        <xs:sequence>
+          <xs:element name="phaseId" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="custSubId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="techId" nillable="true" type="xs:string"/>
+          <xs:element name="customerName" type="xs:string"/>
+          <xs:element minOccurs="0" name="custId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="location" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="serialNo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="duration" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="plannedStart" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="plannedEnd" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="jobType" nillable="true" type="xs:string"/>
+          <xs:element name="priority" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="slaPriority" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="officeNote" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="asset" nillable="true" type="tns:asset"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="services" nillable="true" type="tns:service"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="formItemProperties" nillable="true" type="tns:formItemProperties"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="requiredCapabilities" nillable="true" type="tns:requiredCapabilities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="generalDetails">
+    <xs:sequence>
+      <xs:element name="jobId" type="xs:string"/>
+      <xs:element minOccurs="0" name="employer" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="subEmployer" nillable="true" type="xs:string"/>
+      <xs:element name="address1" type="xs:string"/>
+      <xs:element minOccurs="0" name="address2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="suburb" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="custState" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="postCode" nillable="true" type="xs:string"/>
+      <xs:element name="latitude" nillable="true" type="xs:double"/>
+      <xs:element name="longitude" nillable="true" type="xs:double"/>
+      <xs:element minOccurs="0" name="contactName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactPhone" nillable="true" type="xs:string"/>
+      <xs:element name="jobDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerEmail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="accountMgrEmail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="serviceMgrEmail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="siteNotes" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="service">
+    <xs:sequence>
+      <xs:element name="serviceId" type="xs:string"/>
+      <xs:element name="serviceName" type="xs:string"/>
+      <xs:element minOccurs="0" name="serviceDescription" nillable="true" type="xs:string"/>
+      <xs:element name="serviceType" type="xs:string"/>
+      <xs:element name="serviceOrderId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requiredCapabilities">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createJobResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modifyJobDetails">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="generalDetails" type="tns:generalDetails"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modifyJobDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importCustomerAssets">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="assetsList" type="tns:customerAssets"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customerAssets">
+    <xs:sequence>
+      <xs:element name="serialNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+      <xs:element name="custId" type="xs:string"/>
+      <xs:element name="assetType" type="xs:string"/>
+      <xs:element minOccurs="0" name="modelNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="location" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="buildingName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="installDate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="make" nillable="true" type="xs:string"/>
+      <xs:element name="orderId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="notes" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importCustomerAssetsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportMessages">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="message" type="tns:export"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportMessagesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createMessage">
+    <xs:sequence>
+      <xs:element name="message" type="tns:message"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="message">
+    <xs:sequence>
+      <xs:element name="techId" type="xs:string"/>
+      <xs:element name="msgId" type="xs:string"/>
+      <xs:element name="msg" type="xs:string"/>
+      <xs:element name="msgDate" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportGPS">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="gps" type="tns:exportWithTechId"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportWithTechId">
+    <xs:complexContent>
+      <xs:extension base="tns:export">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="techId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="exportGPSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importFullPartsInventoryLoc">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="partsInventoryLoc" type="tns:partsInventoryLoc"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="partsInventoryLoc">
+    <xs:sequence>
+      <xs:element name="invLocId" type="xs:string"/>
+      <xs:element name="partId" type="xs:string"/>
+      <xs:element name="partDesc" type="xs:string"/>
+      <xs:element name="invLocQty" type="xs:int"/>
+      <xs:element name="unitPrice" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importFullPartsInventoryLocResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reassignJob">
+    <xs:sequence>
+      <xs:element name="jobId" type="xs:string"/>
+      <xs:element name="techId" type="xs:string"/>
+      <xs:element minOccurs="0" name="startDateTime" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reassignJobResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importPartialPartsInventoryLoc">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="partsInventoryLoc" type="tns:partsInventoryLoc"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importPartialPartsInventoryLocResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportNPTimes">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="NPTime" type="tns:export"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportNPTimesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteMessage">
+    <xs:sequence>
+      <xs:element name="msgId" type="xs:string"/>
+      <xs:element name="techId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importJobAttachments">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="jobAttachments" type="tns:jobAttachments"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="jobAttachments">
+    <xs:sequence>
+      <xs:element name="jobId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" name="attachmentData" type="tns:attachmentData"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="attachmentData">
+    <xs:sequence>
+      <xs:element name="fileName" type="xs:string"/>
+      <xs:element name="fileData" type="xs:string"/>
+      <xs:element minOccurs="0" name="comments" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importJobAttachmentsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://ws.api.playpen.retriever.com.au/" xmlns="bar" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="bar">
+  <xs:import namespace="http://ws.api.playpen.retriever.com.au/"/>
+  <xs:element name="partsInventoryLoc" type="ns1:partsInventoryLoc"/>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="exportFieldworkers">
+    <wsdl:part element="tns:exportFieldworkers" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAsset">
+    <wsdl:part element="tns:removeAsset" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importCustomers">
+    <wsdl:part element="tns:importCustomers" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteJobResponse">
+    <wsdl:part element="tns:deleteJobResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportStatusUpdates">
+    <wsdl:part element="tns:exportStatusUpdates" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAssetResponse">
+    <wsdl:part element="tns:removeAssetResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportNewJobsResponse">
+    <wsdl:part element="tns:exportNewJobsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportMessagesResponse">
+    <wsdl:part element="tns:exportMessagesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="assignJobResponse">
+    <wsdl:part element="tns:assignJobResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportJobs">
+    <wsdl:part element="tns:exportJobs" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importPartialPartsInventoryLocResponse">
+    <wsdl:part element="tns:importPartialPartsInventoryLocResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportForms">
+    <wsdl:part element="tns:exportForms" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportFormsResponse">
+    <wsdl:part element="tns:exportFormsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importCustomerAssetsResponse">
+    <wsdl:part element="tns:importCustomerAssetsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="closeJob">
+    <wsdl:part element="tns:closeJob" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importFullPartsInventoryLocResponse">
+    <wsdl:part element="tns:importFullPartsInventoryLocResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteMessageResponse">
+    <wsdl:part element="tns:deleteMessageResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reassignJobResponse">
+    <wsdl:part element="tns:reassignJobResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="assignJob">
+    <wsdl:part element="tns:assignJob" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAssets">
+    <wsdl:part element="tns:addAssets" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteJob">
+    <wsdl:part element="tns:deleteJob" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportNewJobs">
+    <wsdl:part element="tns:exportNewJobs" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importParts">
+    <wsdl:part element="tns:importParts" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="closeJobResponse">
+    <wsdl:part element="tns:closeJobResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createJob">
+    <wsdl:part element="tns:createJob" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyJobDetails">
+    <wsdl:part element="tns:modifyJobDetails" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importCustomerAssets">
+    <wsdl:part element="tns:importCustomerAssets" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportGPSResponse">
+    <wsdl:part element="tns:exportGPSResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importJobAttachmentsResponse">
+    <wsdl:part element="tns:importJobAttachmentsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAssetsResponse">
+    <wsdl:part element="tns:addAssetsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportFieldworkersResponse">
+    <wsdl:part element="tns:exportFieldworkersResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportMessages">
+    <wsdl:part element="tns:exportMessages" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportJobsResponse">
+    <wsdl:part element="tns:exportJobsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createMessage">
+    <wsdl:part element="tns:createMessage" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportGPS">
+    <wsdl:part element="tns:exportGPS" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportNPTimesResponse">
+    <wsdl:part element="tns:exportNPTimesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importFullPartsInventoryLoc">
+    <wsdl:part element="tns:importFullPartsInventoryLoc" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reassignJob">
+    <wsdl:part element="tns:reassignJob" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportStatusUpdatesResponse">
+    <wsdl:part element="tns:exportStatusUpdatesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createMessageResponse">
+    <wsdl:part element="tns:createMessageResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importPartialPartsInventoryLoc">
+    <wsdl:part element="tns:importPartialPartsInventoryLoc" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyJobDetailsResponse">
+    <wsdl:part element="tns:modifyJobDetailsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createJobResponse">
+    <wsdl:part element="tns:createJobResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importPartsResponse">
+    <wsdl:part element="tns:importPartsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="exportNPTimes">
+    <wsdl:part element="tns:exportNPTimes" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteMessage">
+    <wsdl:part element="tns:deleteMessage" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importJobAttachments">
+    <wsdl:part element="tns:importJobAttachments" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importCustomersResponse">
+    <wsdl:part element="tns:importCustomersResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Web">
+    <wsdl:operation name="exportFieldworkers">
+      <wsdl:input message="tns:exportFieldworkers" name="exportFieldworkers">
+    </wsdl:input>
+      <wsdl:output message="tns:exportFieldworkersResponse" name="exportFieldworkersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeAsset">
+      <wsdl:input message="tns:removeAsset" name="removeAsset">
+    </wsdl:input>
+      <wsdl:output message="tns:removeAssetResponse" name="removeAssetResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importCustomers">
+      <wsdl:input message="tns:importCustomers" name="importCustomers">
+    </wsdl:input>
+      <wsdl:output message="tns:importCustomersResponse" name="importCustomersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportStatusUpdates">
+      <wsdl:input message="tns:exportStatusUpdates" name="exportStatusUpdates">
+    </wsdl:input>
+      <wsdl:output message="tns:exportStatusUpdatesResponse" name="exportStatusUpdatesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportJobs">
+      <wsdl:input message="tns:exportJobs" name="exportJobs">
+    </wsdl:input>
+      <wsdl:output message="tns:exportJobsResponse" name="exportJobsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportForms">
+      <wsdl:input message="tns:exportForms" name="exportForms">
+    </wsdl:input>
+      <wsdl:output message="tns:exportFormsResponse" name="exportFormsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeJob">
+      <wsdl:input message="tns:closeJob" name="closeJob">
+    </wsdl:input>
+      <wsdl:output message="tns:closeJobResponse" name="closeJobResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="assignJob">
+      <wsdl:input message="tns:assignJob" name="assignJob">
+    </wsdl:input>
+      <wsdl:output message="tns:assignJobResponse" name="assignJobResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAssets">
+      <wsdl:input message="tns:addAssets" name="addAssets">
+    </wsdl:input>
+      <wsdl:output message="tns:addAssetsResponse" name="addAssetsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteJob">
+      <wsdl:input message="tns:deleteJob" name="deleteJob">
+    </wsdl:input>
+      <wsdl:output message="tns:deleteJobResponse" name="deleteJobResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportNewJobs">
+      <wsdl:input message="tns:exportNewJobs" name="exportNewJobs">
+    </wsdl:input>
+      <wsdl:output message="tns:exportNewJobsResponse" name="exportNewJobsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importParts">
+      <wsdl:input message="tns:importParts" name="importParts">
+    </wsdl:input>
+      <wsdl:output message="tns:importPartsResponse" name="importPartsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createJob">
+      <wsdl:input message="tns:createJob" name="createJob">
+    </wsdl:input>
+      <wsdl:output message="tns:createJobResponse" name="createJobResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyJobDetails">
+      <wsdl:input message="tns:modifyJobDetails" name="modifyJobDetails">
+    </wsdl:input>
+      <wsdl:output message="tns:modifyJobDetailsResponse" name="modifyJobDetailsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importCustomerAssets">
+      <wsdl:input message="tns:importCustomerAssets" name="importCustomerAssets">
+    </wsdl:input>
+      <wsdl:output message="tns:importCustomerAssetsResponse" name="importCustomerAssetsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportMessages">
+      <wsdl:input message="tns:exportMessages" name="exportMessages">
+    </wsdl:input>
+      <wsdl:output message="tns:exportMessagesResponse" name="exportMessagesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createMessage">
+      <wsdl:input message="tns:createMessage" name="createMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:createMessageResponse" name="createMessageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportGPS">
+      <wsdl:input message="tns:exportGPS" name="exportGPS">
+    </wsdl:input>
+      <wsdl:output message="tns:exportGPSResponse" name="exportGPSResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importFullPartsInventoryLoc">
+      <wsdl:input message="tns:importFullPartsInventoryLoc" name="importFullPartsInventoryLoc">
+    </wsdl:input>
+      <wsdl:output message="tns:importFullPartsInventoryLocResponse" name="importFullPartsInventoryLocResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reassignJob">
+      <wsdl:input message="tns:reassignJob" name="reassignJob">
+    </wsdl:input>
+      <wsdl:output message="tns:reassignJobResponse" name="reassignJobResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importPartialPartsInventoryLoc">
+      <wsdl:input message="tns:importPartialPartsInventoryLoc" name="importPartialPartsInventoryLoc">
+    </wsdl:input>
+      <wsdl:output message="tns:importPartialPartsInventoryLocResponse" name="importPartialPartsInventoryLocResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportNPTimes">
+      <wsdl:input message="tns:exportNPTimes" name="exportNPTimes">
+    </wsdl:input>
+      <wsdl:output message="tns:exportNPTimesResponse" name="exportNPTimesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMessage">
+      <wsdl:input message="tns:deleteMessage" name="deleteMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:deleteMessageResponse" name="deleteMessageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importJobAttachments">
+      <wsdl:input message="tns:importJobAttachments" name="importJobAttachments">
+    </wsdl:input>
+      <wsdl:output message="tns:importJobAttachmentsResponse" name="importJobAttachmentsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoapBinding" type="tns:Web">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="exportFieldworkers">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="exportFieldworkers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportFieldworkersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeAsset">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeAsset">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeAssetResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importCustomers">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="importCustomers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importCustomersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportStatusUpdates">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="exportStatusUpdates">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportStatusUpdatesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportJobs">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="exportJobs">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportJobsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportForms">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="exportForms">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportFormsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeJob">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="closeJob">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="closeJobResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="assignJob">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="assignJob">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="assignJobResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAssets">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addAssets">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addAssetsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteJob">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteJob">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteJobResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportNewJobs">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="exportNewJobs">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportNewJobsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importParts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="importParts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importPartsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createJob">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createJob">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createJobResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyJobDetails">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyJobDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyJobDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importCustomerAssets">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="importCustomerAssets">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importCustomerAssetsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportMessages">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="exportMessages">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportMessagesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createMessage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportGPS">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="exportGPS">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportGPSResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importFullPartsInventoryLoc">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="importFullPartsInventoryLoc">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importFullPartsInventoryLocResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reassignJob">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="reassignJob">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reassignJobResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importPartialPartsInventoryLoc">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="importPartialPartsInventoryLoc">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importPartialPartsInventoryLocResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportNPTimes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="exportNPTimes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportNPTimesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMessage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="importJobAttachments">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="importJobAttachments">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importJobAttachmentsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port binding="tns:WebServiceSoapBinding" name="WebPort">
+      <soap:address location="http://localhost:9191/soap/barking/integration/webservice"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
